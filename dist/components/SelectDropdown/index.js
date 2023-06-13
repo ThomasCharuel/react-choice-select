@@ -56,7 +56,9 @@ function SelectDropdown(_ref) {
   }, choice ? choice.label : placeholder), /*#__PURE__*/_react.default.createElement("img", {
     className: _indexModule.default.header__icon,
     src: _caretDown.default,
-    alt: ""
+    alt: "",
+    width: "0.6rem",
+    height: "0.6rem"
   })), dropdownIsOpen && /*#__PURE__*/_react.default.createElement("div", {
     className: _indexModule.default.dropdown__menu
   }, choices.map((item, index) => /*#__PURE__*/_react.default.createElement("div", {

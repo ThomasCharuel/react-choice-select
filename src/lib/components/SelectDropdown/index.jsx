@@ -45,7 +45,7 @@ export default function SelectDropdown({
       </p>
       <div className={styles.header} onClick={() => toggleDropdown()}>
         <p className={styles.header__selected_value}>{choice ? choice.label : placeholder}</p>
-        <img className={styles.header__icon} src={CaretIcon} alt="" />
+        <img className={styles.header__icon} src={CaretIcon} alt="" width="0.6rem" height="0.6rem" />
       </div>
       {dropdownIsOpen && (
         <div className={styles.dropdown__menu}>
