@@ -18,10 +18,10 @@ const App = () => {
   return (
     <div>
       <SelectDropdown
-        choices={options}
-        onValueChange={handleOptionChange}
-        placeholder="Select an option"
+        options={options}
+        onChange={handleOptionChange}
         label="Option"
+        placeholder="Select an option"
       />
       <p>Selected option: {selectedOption}</p>
     </div>

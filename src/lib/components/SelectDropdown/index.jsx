@@ -3,11 +3,27 @@ import PropTypes from 'prop-types';
 import CaretIcon from '../../assets/caret-down.svg';
 import styles from './index.module.scss';
 
+/**
+ * A custom dropdown select component.
+ *
+ * @component
+ * @example
+ * // Usage:
+ * // <SelectDropdown options={options} onChange={handleChange} />
+ *
+ * @param {Object[]} options - The options for the dropdown.
+ * @param {string} options[].value - The value of the option.
+ * @param {string} options[].label - The label of the option.
+ * @param {function} onChange - The callback function triggered when the selected option changes.
+ * @param {string} label - The selector label.
+ * @param {string} [placeholder] - The placeholder text for the dropdown.
+ * @returns {JSX.Element} The SelectDropdown component.
+ */
 export default function SelectDropdown({
-  placeholder = 'Select ...',
+  options,
+  onChange,
   label = null,
-  choices,
-  onValueChange,
+  placeholder = 'Select ...',
 }) {
   const componentRef = useRef(null); // ref the component to check for outside click
   const [choice, setChoice] = useState();
@@ -27,7 +43,7 @@ export default function SelectDropdown({
 
   const handleChoiceClick = (newChoice) => {
     setChoice(newChoice);
-    onValueChange(newChoice.value);
+    onChange(newChoice.value);
     setDropdownIsOpen(false);
   };
 
@@ -57,7 +73,7 @@ export default function SelectDropdown({
       </div>
       {dropdownIsOpen && (
         <div className={styles.dropdown__menu}>
-          {choices.map((item, index) => (
+          {options.map((item, index) => (
             <div
               onClick={() => handleChoiceClick(item)}
               key={index}
@@ -75,13 +91,13 @@ export default function SelectDropdown({
 }
 
 SelectDropdown.propTypes = {
-  placeholder: PropTypes.string,
-  label: PropTypes.string,
-  choices: PropTypes.arrayOf(
+  options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       value: PropTypes.any.isRequired,
     }),
   ).isRequired,
-  onValueChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
 };

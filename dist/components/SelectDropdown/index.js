@@ -13,12 +13,28 @@ var _indexModule = _interopRequireDefault(require("./index.module.scss"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+/**
+ * A custom dropdown select component.
+ *
+ * @component
+ * @example
+ * // Usage:
+ * // <SelectDropdown options={options} onChange={handleChange} />
+ *
+ * @param {Object[]} options - The options for the dropdown.
+ * @param {string} options[].value - The value of the option.
+ * @param {string} options[].label - The label of the option.
+ * @param {function} onChange - The callback function triggered when the selected option changes.
+ * @param {string} label - The selector label.
+ * @param {string} [placeholder] - The placeholder text for the dropdown.
+ * @returns {JSX.Element} The SelectDropdown component.
+ */
 function SelectDropdown(_ref) {
   let {
-    placeholder = 'Select ...',
+    options,
+    onChange,
     label = null,
-    choices,
-    onValueChange
+    placeholder = 'Select ...'
   } = _ref;
   const componentRef = (0, _react.useRef)(null); // ref the component to check for outside click
   const [choice, setChoice] = (0, _react.useState)();
@@ -36,7 +52,7 @@ function SelectDropdown(_ref) {
   }, []);
   const handleChoiceClick = newChoice => {
     setChoice(newChoice);
-    onValueChange(newChoice.value);
+    onChange(newChoice.value);
     setDropdownIsOpen(false);
   };
   const toggleDropdown = () => {
@@ -61,18 +77,18 @@ function SelectDropdown(_ref) {
     height: "0.6rem"
   })), dropdownIsOpen && /*#__PURE__*/_react.default.createElement("div", {
     className: _indexModule.default.dropdown__menu
-  }, choices.map((item, index) => /*#__PURE__*/_react.default.createElement("div", {
+  }, options.map((item, index) => /*#__PURE__*/_react.default.createElement("div", {
     onClick: () => handleChoiceClick(item),
     key: index,
     className: "".concat(_indexModule.default.dropdown__menu_item, " ").concat(choice && choice.value === item.value && _indexModule.default.dropdown__menu_item_selected)
   }, item.label))));
 }
 SelectDropdown.propTypes = {
-  placeholder: _propTypes.default.string,
-  label: _propTypes.default.string,
-  choices: _propTypes.default.arrayOf(_propTypes.default.shape({
+  options: _propTypes.default.arrayOf(_propTypes.default.shape({
     label: _propTypes.default.string.isRequired,
     value: _propTypes.default.any.isRequired
   })).isRequired,
-  onValueChange: _propTypes.default.func.isRequired
+  onChange: _propTypes.default.func.isRequired,
+  label: _propTypes.default.string,
+  placeholder: _propTypes.default.string
 };

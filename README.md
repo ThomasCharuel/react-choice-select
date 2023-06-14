@@ -28,16 +28,16 @@ import { SelectDropdown } from 'react-choice-select';
 2. Use the `SelectDropdown` component in your JSX code:
 
 ```jsx
-<SelectDropdown choices={...} onValueChange={...} />
+<SelectDropdown options={...} onChange={...} />
 ```
 
 ## Props
 
 The `SelectDropdown` components accepts the following props:
 
-- `choices` (array): An array of options to populate the dropdown. Each option should be an object with `label` and `value`properties.
-- `onValueChange` (function): A callback function invoked when the selected option changes. It receives the selected option's value as a parameter.
-- `label` (string, optional): The input's label.
+- `options` (array): An array of options to populate the dropdown. Each option should be an object with `label` and `value`properties.
+- `onChange` (function): A callback function invoked when the selected option changes. It receives the selected option's value as a parameter.
+- `label` (string, optional): The selector label.
 - `placeholder` (string, optional): The placeholder text to display when no option is selected.
 
 ## Examples
@@ -62,10 +62,10 @@ const MyComponent = () => {
   return (
     <div>
       <SelectDropdown
-        choices={options}
-        onValueChange={handleOptionChange}
-        placeholder="Select an option"
+        options={options}
+        onChange={handleOptionChange}
         label="Option"
+        placeholder="Select an option"
       />
       <p>Selected option: {selectedOption}</p>
     </div>
