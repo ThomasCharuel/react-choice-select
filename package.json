@@ -1,6 +1,6 @@
 {
   "name": "react-choice-select",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A React component for HTML form selector",
   "author": "Thomas Charuel",
   "repository": {
@@ -50,10 +50,12 @@
     "@babel/cli": "^7.22.5",
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
+    "eslint": "^8.42.0",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "sass": "^1.63.3",
-    "webpack": "^5.86.0"
+    "sass": "^1.63.3"
   }
 }

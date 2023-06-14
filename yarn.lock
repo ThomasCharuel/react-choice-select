@@ -4049,7 +4049,7 @@ eslint-plugin-react-hooks@^4.3.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz#4c3e697ad95b77e93f8646aaa1630c1ba607edd3"
   integrity sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==
 
-eslint-plugin-react@^7.27.1:
+eslint-plugin-react@^7.27.1, eslint-plugin-react@^7.32.2:
   version "7.32.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.32.2.tgz#e71f21c7c265ebce01bcbc9d0955170c55571f10"
   integrity sha512-t2fBMa+XzonrrNkyVirzKlvn5RXzzPwRHtMvLAtVZrt8oxgnTQaYbU6SXTOO1mwQgp1y5+toMSKInnzGr0Knqg==
@@ -4114,7 +4114,7 @@ eslint-webpack-plugin@^3.1.1:
     normalize-path "^3.0.0"
     schema-utils "^4.0.0"
 
-eslint@^8.3.0:
+eslint@^8.3.0, eslint@^8.42.0:
   version "8.42.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.42.0.tgz#7bebdc3a55f9ed7167251fe7259f75219cade291"
   integrity sha512-ulg9Ms6E1WPf67PHaEY4/6E2tEn5/f7FXGzr3t9cBMugOmf1INYvuUwwh1aXQN4MfJ6a5K2iNwP3w4AColvI9A==
@@ -7228,6 +7228,11 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
+prettier@^2.8.8:
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
+  integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
+
 pretty-bytes@^5.3.0, pretty-bytes@^5.4.1:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
@@ -8852,7 +8857,7 @@ webpack-sources@^3.2.3:
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
 
-webpack@^5.64.4, webpack@^5.86.0:
+webpack@^5.64.4:
   version "5.86.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.86.0.tgz#b0eb81794b62aee0b7e7eb8c5073495217d9fc6d"
   integrity sha512-3BOvworZ8SO/D4GVP+GoRC3fVeg5MO4vzmq8TJJEkdmopxyazGDxN8ClqN12uzrZW9Tv8EED8v5VSb6Sqyi0pg==

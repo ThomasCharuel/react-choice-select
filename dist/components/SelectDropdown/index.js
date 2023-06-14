@@ -16,7 +16,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function SelectDropdown(_ref) {
   let {
     placeholder = 'Select ...',
-    label,
+    label = null,
     choices,
     onValueChange
   } = _ref;
@@ -45,7 +45,7 @@ function SelectDropdown(_ref) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "".concat(_indexModule.default.container, " ").concat(dropdownIsOpen && _indexModule.default.container_opened),
     ref: componentRef
-  }, /*#__PURE__*/_react.default.createElement("p", {
+  }, label && /*#__PURE__*/_react.default.createElement("p", {
     className: _indexModule.default.label,
     onClick: () => toggleDropdown()
   }, label), /*#__PURE__*/_react.default.createElement("div", {
@@ -69,7 +69,7 @@ function SelectDropdown(_ref) {
 }
 SelectDropdown.propTypes = {
   placeholder: _propTypes.default.string,
-  label: _propTypes.default.string.isRequired,
+  label: _propTypes.default.string,
   choices: _propTypes.default.arrayOf(_propTypes.default.shape({
     label: _propTypes.default.string.isRequired,
     value: _propTypes.default.any.isRequired

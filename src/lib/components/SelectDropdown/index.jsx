@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 export default function SelectDropdown({
   placeholder = 'Select ...',
-  label,
+  label = null,
   choices,
   onValueChange,
 }) {
@@ -40,12 +40,20 @@ export default function SelectDropdown({
       className={`${styles.container} ${dropdownIsOpen && styles.container_opened}`}
       ref={componentRef}
     >
-      <p className={styles.label} onClick={() => toggleDropdown()}>
-        {label}
-      </p>
+      {label && (
+        <p className={styles.label} onClick={() => toggleDropdown()}>
+          {label}
+        </p>
+      )}
       <div className={styles.header} onClick={() => toggleDropdown()}>
         <p className={styles.header__selected_value}>{choice ? choice.label : placeholder}</p>
-        <img className={styles.header__icon} src={CaretIcon} alt="" width="0.6rem" height="0.6rem" />
+        <img
+          className={styles.header__icon}
+          src={CaretIcon}
+          alt=""
+          width="0.6rem"
+          height="0.6rem"
+        />
       </div>
       {dropdownIsOpen && (
         <div className={styles.dropdown__menu}>
@@ -68,7 +76,7 @@ export default function SelectDropdown({
 
 SelectDropdown.propTypes = {
   placeholder: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   choices: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
